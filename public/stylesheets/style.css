@@ -1,0 +1,77 @@
+/*
+* CSS code for altering look of Program 
+* @author - Frank Luo
+* Sources used:
+* https://www.w3schools.com/colors/colors_shades.asp 
+* https://www.w3schools.com/cssref/pr_background-color.php 
+* https://www.w3schools.com/css/css_font.asp 
+* https://developer.mozilla.org/en-US/docs/Web/CSS/background-color 
+* https://www.w3.org/Style/Examples/007/fonts.en.html
+*/
+
+/*
+Sets font type, marin, padding, and border-radius for the body 
+*/
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/*
+Sets background color,padding, and border-radius for the food form
+*/
+#foodForm {
+  background-color: #ec5417a6;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/*
+Sets color and text alignment for h1
+*/
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+/*
+Sets display and margin bottom for label
+*/
+form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/*
+Sets width, padding, and border for different inputs
+*/
+form input[type="text"],
+form input[type="number"],
+form select {
+  width: 10%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/*
+Sets width, padding, border, and color for submit button
+*/
+form input[type="submit"] {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 
+Hovering over button makes the color darker
+*/
+form input[type="submit"]:hover {
+  background-color: #0056b3;
+}
