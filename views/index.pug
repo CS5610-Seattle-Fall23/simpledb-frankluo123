@@ -1,0 +1,68 @@
+extends layout.pug
+//- Frank Luo
+//- User is able to fill out a form showcasing their food preferences.
+    The form will contain various types of input elements.
+    After submission, the data will be processed server-side.
+    The server will send a response based on the input.  
+    Pug works with JavaScript. 
+//- 
+   Sources Used:  
+   https://www.w3schools.com/tags/att_input_type_text.asp
+   https://www.w3schools.com/tags/tag_select.asp
+   https://www.w3schools.com/tags/att_input_type_radio.asp 
+   https://www.w3schools.com/tags/att_input_type_number.asp
+   https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
+   https://pugjs.org/api/getting-started.html 
+   https://www.sitepoint.com/a-beginners-guide-to-pug/
+   https://html-to-pug.com
+
+block content
+
+  #foodForm
+    h1 Food Favorites!
+    form(action='/submitFoodPreferences' method='post')
+      fieldset
+        // User provides their favorite ice cream flavor through text
+        label(for='iceCreamFlavor') Favorite Ice Cream Flavor:
+        input#iceCreamFlavor(type='text' name='iceCreamFlavor')
+        // User provides their favorite pizza topping through text
+        label(for='pizzaToppings') Favorite Pizza Topping:
+        input#pizzaToppings(type='text' name='pizzaToppings')
+        // User provides their favorite fruit through a dropdown menu selection
+        label(for='favoriteFruit') Favorite Fruit:
+        select#favoriteFruit(name='favoriteFruit')
+          option(value='noSelection') No Selection
+          option(value='apple') Apple
+          option(value='banana') Banana
+          option(value='cherry') Cherry
+          option(value='peach') Peach
+          option(value='pineapple') Pineapple
+        // User provides their favorite cuisine through radio buttons
+        label Favorite Type of Cuisine:
+        input#cuisine1(type='radio' name='cuisine' value='Italian')
+        label(for='cuisine1') Italian
+        input#cuisine2(type='radio' name='cuisine' value='Chinese')
+        label(for='cuisine2') Chinese
+        input#cuisine3(type='radio' name='cuisine' value='Mexican')
+        label(for='cuisine3') Mexican
+        input#cuisine4(type='radio' name='cuisine' value='American')
+        label(for='cuisine4') American
+        input#cuisine5(type='radio' name='cuisine' value='Indian')
+        label(for='cuisine5') Indian
+        // User provides their favorite spiciness level through a number clicker
+        label(for='spiciness') Spiciness Level (1-5):
+        input#spiciness(type='number' name='spiciness' min='1' max='5')
+        input(type='submit' value='Submit Choices!')
+  // Helps with cookie management / output
+  #cookie
+
+block scripts
+  script.
+    const cookies = document.cookie.split(';');
+    for(let i = 0; i < cookies.length; i++){
+    const split = cookies[i].split('=');
+    if(split[0].trim() === "favoriteFruit"){
+    document.getElementById("cookie").innerText = split[1];
+    break;
+    }
+    }
