@@ -22,7 +22,7 @@ router.get('/', async function(req, res, next) {
 const mongoose = require('mongoose');
 const db = mongoose.connection;
 const Schema = mongoose.Schema;
-const mySchema = new Schema({ iceCream: String}, {collection: 'mycollection'});
+const mySchema = new Schema({ iceCream: String, pizza: String, fruit: String, cuisine: String, spiciness: Number}, {collection: 'mycollection'});
 const MyModel = mongoose.model('mycollection', mySchema );
 
 /**
@@ -54,7 +54,7 @@ router.post('/submitFoodPreferences', async (req, res, next) => {
   // data.save((err) => { if (err) return handleError(err); })
 
   try {
-    const data = new MyModel({ iceCream: iceCreamFlavor });
+    const data = new MyModel({ iceCream: iceCreamFlavor, pizza: pizzaToppings, fruit: favoriteFruit, cuisine: cuisine, spiciness: spiciness });
     await data.save();
   } catch (err) {
     return handleError(err);
