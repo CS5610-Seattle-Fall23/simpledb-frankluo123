@@ -55,7 +55,15 @@ block content
         input(type='submit' value='Submit Choices!')
   // Helps with cookie management / output
   #cookie
-
+  #databaseData
+    h2 Database Content:
+    each doc in docs
+      div
+        p Ice Cream: #{doc.iceCream}
+        p Pizza: #{doc.pizza}
+        p Fruit: #{doc.fruit}
+        p Cuisine: #{doc.cuisine}
+        p Spiciness: #{doc.spiciness}
 block scripts
   script.
     const cookies = document.cookie.split(';');

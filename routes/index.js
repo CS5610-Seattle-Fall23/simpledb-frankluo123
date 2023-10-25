@@ -7,17 +7,30 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
+// router.get('/', async function(req, res, next) {
+//   for await (const doc of MyModel.find()) {
+//     console.log(doc); 
+//   }
+//   res.render('index', { title: 'Express'});
+// });
+
 router.get('/', async function(req, res, next) {
-  for await (const doc of MyModel.find()) {
-    console.log(doc); 
+  let docsArray = [];
+  try {
+      for await (const doc of MyModel.find()) {
+          console.log(doc);  // Log each document to the console
+          docsArray.push(doc);
+      }
+  } catch (error) {
+      console.error('Error fetching data from MongoDB:', error);
+      return next(error);
   }
-  res.render('index', { title: 'Express' });
+  console.log('Docs Array:', docsArray);  // Log the final array to the console
+  res.render('index', { title: 'Express', docs: docsArray });
 });
 
 
-// router.get('/presidents', function(req, res, next) {
-//   res.render('presidents', { title: 'Express' });
-// });
+
 
 const mongoose = require('mongoose');
 const db = mongoose.connection;
