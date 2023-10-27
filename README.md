@@ -134,10 +134,31 @@ Update the README to answer the following questions:
  ![MongoDB Validation](MongoDB_1.png)
  ![MongoDB Validation](MongoDB_2.png)
 
- 
+
  3. Pug/Jade is not the only template engine. Another popular one is EJS. Look into EJS and describe & compare it to Pug. Cite at least two sources.
+  
+  EJS stands for Embedded JavaScript. EJS uses regular HTML markup with embedded JavaScript. It is generally easier for beginners coming from an HTML background. It allows for easier integration of JavaScript logic into HTML compared to PUG as it is less rigid about the structure of the templates. EJS is often cited for being less resource intensive and faster than PUG, particularly for large-scale applications. Both Pug and EJS have plenty of resources online for learners.
+
+  Sources Used: 
+
+  https://ejs.co 
+
+  https://www.geeksforgeeks.org/use-ejs-as-template-engine-in-node-js/
+
  4. Why is it convenient to use Mongo with Node.js?
+
+  It is convenient to use MongoDB with Node.js because they both use JavaScript. This uniformity can lead to a streamlined process. MongoDB also stores data in a binary JSON-like format called BSON that makes it convenient to send data back and forth between the client, server, and database. Finally, there are robust libraries and packages such as Mongoose and NPM that make it simple to integrade Node.js with MongoDB. 
+
+
  5. In your own words what is BSON and why is it used with Mongo instead of JSON? Cite any sources.
+  
+  BSON stands for Binary JSON. It is a binary-encoded serialization format that is an extension of JSON, a lightweight data interchange format. BSON is used instead of JSON with MongoDB because it is more efficient in storage as well as speed of access. In addition, it has support for a wider range of data types and ordered fields compared to JSON.
+
+  Sources Used: 
+
+  https://www.mongodb.com/docs/manual/reference/bson-types/
+
+  https://en.wikipedia.org/wiki/BSON 
 
  ---
 ## Running Tests Locally
