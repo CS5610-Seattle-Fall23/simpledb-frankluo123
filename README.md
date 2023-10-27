@@ -117,7 +117,24 @@ Be sure that you have:
 Update the README to answer the following questions:
 
  1. Add screenshots showing your app running on Google Cloud. Add a link to your website. Add a screenshot showing the html on your website has been validated. Also one showing proper contrast.
+
+ Website: https://simpledb-403119.wl.r.appspot.com 
+
+![Working Validation](Working_1.png)
+![Working Validation](Working_2.png)
+![Working Validation](Working_3.png)
+![Working Validation](Working_4.png)
+![Validate Validation](simpledb_validate.png)
+![Color Validation](simpledb_a11y.png)
+![Test Validation](tests.png)
+![Coverage Validation](tests_coverage.png)
+
  2. Add screenshots showing your Atlas database before and after your app runs.
+
+ ![MongoDB Validation](MongoDB_1.png)
+ ![MongoDB Validation](MongoDB_2.png)
+
+ 
  3. Pug/Jade is not the only template engine. Another popular one is EJS. Look into EJS and describe & compare it to Pug. Cite at least two sources.
  4. Why is it convenient to use Mongo with Node.js?
  5. In your own words what is BSON and why is it used with Mongo instead of JSON? Cite any sources.

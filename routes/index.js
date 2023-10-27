@@ -7,31 +7,24 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-// router.get('/', async function(req, res, next) {
-//   for await (const doc of MyModel.find()) {
-//     console.log(doc); 
-//   }
-//   res.render('index', { title: 'Express'});
-// });
-
 router.get('/', async function(req, res, next) {
   let docsArray = [];
   try {
       for await (const doc of MyModel.find()) {
-          console.log(doc);  // Log each document to the console
+          console.log(doc);  // Logging each document to the console
           docsArray.push(doc);
       }
   } catch (error) {
       console.error('Error fetching data from MongoDB:', error);
       return next(error);
   }
-  console.log('Docs Array:', docsArray);  // Log the final array to the console
+  console.log('Docs Array:', docsArray);  // Logging the final array to the console
   res.render('index', { title: 'Express', docs: docsArray });
 });
 
 
 
-
+// For mongoose management 
 const mongoose = require('mongoose');
 const db = mongoose.connection;
 const Schema = mongoose.Schema;
@@ -55,7 +48,6 @@ router.post('/submitFoodPreferences', async (req, res, next) => {
       return;
   }
 
-
   // Debugging purposes
   console.log(req.body.iceCreamFlavor);
   console.log(req.body.pizzaToppings);
@@ -63,9 +55,7 @@ router.post('/submitFoodPreferences', async (req, res, next) => {
   console.log(req.body.cuisine);
   console.log(req.body.spiciness);
 
-  // const data = new MyModel({ iceCream: req.body.iceCreamFlavor});
-  // data.save((err) => { if (err) return handleError(err); })
-
+  // For error handling 
   try {
     const data = new MyModel({ iceCream: iceCreamFlavor, pizza: pizzaToppings, fruit: favoriteFruit, cuisine: cuisine, spiciness: spiciness });
     await data.save();
